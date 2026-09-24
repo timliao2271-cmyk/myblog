@@ -1,0 +1,16 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "static/images"
+public_folder: "/images"
+collections:
+  - name: "blog"
+    label: "文章"
+    folder: "content/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "標題", name: "title", widget: "string" }
+      - { label: "發布日期", name: "date", widget: "datetime" }
+      - { label: "草稿", name: "draft", widget: "boolean", default: false }
+      - { label: "文章內容", name: "body", widget: "markdown" }
